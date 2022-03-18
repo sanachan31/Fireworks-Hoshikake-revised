@@ -1,0 +1,1464 @@
+@charset "utf-8";
+
+/* ===PC 全体  I Fireworks Festival Hoshikake==== */
+/* #region top */
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+body {
+  color: #fff;
+  font-size: 0.875rem;
+  margin: 0px;
+  padding: 0px;
+  font-family: "游ゴシック", "Yu Gothic", "ヒラギノ角ゴシック", "Hiragino Sans", sans-serif;
+}
+@font-face {
+  font-family: "kokumincho";
+  src: url('./font/kokumincho.woff') format('woff');
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+h1, h2, h3 {
+  line-height: 1;
+  font-weight: normal;
+}
+nav, ul, li {
+  list-style: none;
+}
+.wrap-inner {    /*===4セクションを包む===*/
+  background-color: #111;
+}
+.wrapper {       /*===横の余白===*/
+  padding: 0 7%;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1900px;
+}
+.section-title {
+  font-family: "kokumincho", "Yu Mincho", serif;
+  writing-mode: vertical-rl;
+}
+/* #endregion top */
+/*=====ヘッダー==============================*/
+/* #region header */
+/* #region */
+#header {
+  font-family: "kokumincho", "Yu Mincho", serif;
+  position: relative;
+  writing-mode: vertical-rl;
+}
+.header-nav {
+  background-color: #555;
+  font-size: 1.4rem;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  right: -100%;
+  z-index: 100;
+  width: 35vw;
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+}
+.header-nav ul {
+  padding: 20px 30px 20px 50px;
+}
+.header-nav ul li {
+  padding: 1.5vw 1.5vw 1vw 1.5vw;
+}
+.header-nav ul li:nth-child(1), 
+.header-nav ul li:nth-child(3), 
+.header-nav ul li:nth-child(6) {
+  font-size: 1.9rem;
+  transform: translateY(-10px);
+}
+.header-nav ul li a {
+  display: block;
+}
+.header-nav a:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+/* #endregion */
+/*=====PCハンバーガー部分↓↓=====*/
+/* #region */
+#toggle {
+  display: none;
+}
+.header-btn {  
+  position: relative;
+  position: fixed;
+  top: 5%;
+  left: 3%;
+  z-index: 100;
+}
+.header-btn span {
+  display: inline-block;
+  height: 40px;  /*ハンバーガー幅*/
+  width: 50px;   /*ハンバーガー高*/
+}
+.header-btn span i {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  display: block;
+  background-color: #fff;
+  transition: all .3s ease-in-out;
+}
+.header-btn span i:nth-child(1) {
+  top: 0;
+}
+.header-btn span i:nth-child(2) {
+  margin: auto;
+  top: 0;
+  bottom: 0;
+}
+.header-btn span i:nth-child(3) {
+  bottom: 0;
+}
+#toggle:checked + .header-btn span i:nth-child(1) { 
+  margin: auto;
+  transform: rotate(45deg);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+#toggle:checked + .header-btn span i:nth-child(2) {
+  margin: auto;  
+  transform: rotateX(90deg);
+  top:0 ;
+  bottom: 0;
+}
+#toggle:checked + .header-btn span i:nth-child(3) {
+  margin: auto;
+  transform: rotate(-45deg);
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+/* #endregion */
+/*------クルーズ船予約------*/
+/* #region */
+#toggle:checked + .header-btn + .header-nav {
+  position: fixed;
+  z-index: 99;
+  opacity: 1;
+  display: block;  /*ナビの代わりに3本線を表示する*/
+}
+.reserve {
+  font-size: 1.8rem;
+  border: 2px solid;
+  background-color:  rgba(255, 255, 255, 0.3);
+  padding: 18px 17px;
+  display: inline-block;
+  position: fixed;
+  bottom: 5%;
+  left: 3%;
+  z-index: 100;
+  display: block;
+}
+/* #endregion */
+/* #endregion header */
+/*=====メインビジュアル======================*/
+/* #region mainvisual */
+.content {
+  font-family: "kokumincho", "Yu Mincho", serif;
+  writing-mode: vertical-rl;
+  background: url(img/mainvisual-2.jpg) no-repeat fixed center top/cover; 
+  height: 380vh;
+  width: 100vw;
+  position: relative;
+}
+#img-2 {   /*--パララックス背景--*/
+  background: url(img/mainvisual-1.jpg) no-repeat fixed center bottom/cover;
+  position: relative;
+  width: 100%;
+  height: 200vh;
+}
+#mainvisual .site-title {
+  font-size: 5rem;
+  position: absolute;
+  top: 8%;
+  right: 16%;
+}
+.date-time {
+  background-color: rgba(17, 17, 17, 0.7);
+  position: absolute;
+  bottom: 3.5%;
+  left: 16%;
+  padding: 20px;
+}
+.date-time p {
+  font-size: 1.5rem;
+}
+.date-time span {
+  font-size: 3rem;
+}
+.date-time p:nth-child(2) {
+  font-size: 2rem;
+  margin: 140px 20px 0 50px;
+}
+.content .rain {
+  font-family: "游ゴシック", "Yu Gothic", "ヒラギノ角ゴシック", "Hiragino Sans", sans-serif;
+  letter-spacing: 2px;
+}
+.content .rain p:nth-child(1) {
+  font-size: 1.5rem;
+  margin: 140px 20px 0 8px;
+}
+.content .rain p:nth-child(2) {
+  font-size: 1.2rem;
+  margin: 140px 0 0 0;
+}
+/* #endregion mainvisual  */
+/*=====開催概要============================*/
+/* #region  outline */
+#outline {
+  background : url(img/outline-1.jpg) no-repeat right 70% top 15%/cover;
+  width: 120%;
+  object-fit: cover;
+  color: #fff;
+}
+.outline-outer {
+  background-color: rgba(51, 51, 51,0.4);
+  padding: 170px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+.outline-outer .section-title {
+  font-size: 2.7rem;
+  padding-left: 50px;
+}
+.outline-outer p {
+  font-family: "kokumincho", "Yu Mincho", serif;
+  writing-mode: vertical-rl;
+  font-size: 1.4rem;
+  line-height: 65px;
+}
+.outline-outer p:nth-child(3) {
+  margin-left: 14%;
+}
+.outline-outer span {
+  font-size: 2rem;
+  color: red;
+}
+/* #endregion outline */
+/*=====船上ツアー============================*/
+/* #region tour */
+/* #region */
+  #tour {
+    padding-top: 170px;
+    position: relative;
+  }
+  .tour-inner1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+  }
+  .tour-inner1 .tour-text {
+    font-family: "kokumincho", "Yu Mincho", serif;
+    writing-mode: vertical-rl;
+    font-size: 1.4rem;
+    line-height: 60px;
+    padding: 0 0 0 30px;
+  }
+  .tour-text .section-title {
+    font-size: 2.5rem;
+    padding-left: 40px;
+  }
+  .tour-text p:nth-child(2) {
+    padding-left: 20px;
+  }
+  .tour-image img {
+    width: 90%;
+  }
+  .tour-img2sp3 {
+    display: none;
+  }
+/* #endregion */
+/* #region  船上ツアー2段目スケジュール-----*/
+  .tour-schedule {
+    background-color: #2a2a2a;
+    padding:  40px 40px 40px 32px;
+    box-sizing: content-box;
+    margin: 0 auto;
+    margin-top: 40px;
+  }
+  .tour-schedule, 
+  .tour-reserve-pc p { 
+    writing-mode: vertical-rl;
+    font-size: 1.2rem;
+    line-height: 60px;
+  }
+  .tour-schedule span {
+    font-family: "kokumincho", "Yu Mincho", serif;
+    display: inline-block;
+    font-size: 2.6rem;
+    padding: 10px 30px 10px 40px;
+  }
+  .tour-schedule dl {
+    display: flex;
+  }
+  .tour-schedule dl:nth-child(2) {
+    border-right: 1px solid;
+  }
+  .tour-schedule dd,
+  .tour-schedule dt {
+    background-color: #404040;
+    padding: 20px 10px;
+    border-left: 1px solid;
+  }
+  .tour-schedule dd {
+    border-top: 1px solid;
+  }
+  .tour-schedule dt {
+    border-bottom: 1px solid;
+  }
+  .tour-schedule dt:nth-child(2),
+  .tour-schedule dt:nth-child(5),
+  .tour-schedule dt:nth-child(8) {
+    border-bottom: 1px dashed;
+  }
+  .tour-schedule dt:last-child {
+    border-bottom: 1px solid;
+  }
+  .tour-schedule p {
+    padding: 20px 40px;
+    margin: 0 40px 0 0;
+    letter-spacing: 2px;
+    line-height: 50px;
+  }
+/* #endregion */
+/* #region  船上ツアー3段目予約-----*/
+  .tour-reserve-pc {   
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .tour-reserve-pc .price {
+    background-color: #2a2a2a;
+    padding: 40px 20px 40px 38px;
+    letter-spacing: 2px;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .tour-reserve-pc .price p:nth-child(1) {
+    font-size: 1.5rem;
+  }
+  .tour-reserve-pc .price p:nth-child(2) {
+    line-height: 40px;
+    padding: 0 10px 0 30px;
+  }
+  .tour-reserve-pc .price p:nth-child(3) {
+    font-size: 1.5rem;
+    padding-top: 15px;
+  }
+  .tour-reserve-pc a {
+    box-sizing: content-box;
+    border: 1px solid;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 18px 0;
+    display: inline-block;
+  }
+  .tour-reserve-pc a:hover {
+    opacity: 0.7;
+  }
+  .tour-reserve-pc img {
+    width: 700px;
+    padding-left: 40px;
+  }
+  .tour-inner2-sp {
+    display: none;
+  }
+  .tour-img3-sp {
+    display: none;
+  }
+/* #endregion */
+/* #region PC船上ツアー　花火アニメーション=====*/
+  .container1 {    /*--花火1  赤1--*/
+    height: 600px;
+    width: 600px;
+    margin: 0;
+    padding: 0;
+    top: 0%;
+    right: 20%;
+    overflow: hidden;
+    z-index: 80;
+    position: absolute;
+  }
+/* #region container1 */
+  .ripples1 div {  /*外側の円*/
+    position: absolute;
+    left: 50%;     /*--位置を中央から--*/
+    top: 50%;      
+    width: 0;      /*--始まりの大きさ--*/
+    height: 0;     
+    border: dotted 10px #ff0000;
+    -webkit-animation: ripples1_anim 5s linear  infinite;
+    animation: ripples1_anim 5s linear infinite;  /*--5秒ごとに一定に永遠に--*/
+    border-radius: 50%;
+    opacity: 0;
+    z-index: 80;
+  }
+  .ripples1 div::before {   /*真ん中*/
+    position: absolute;
+    content: '';
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: dotted 10px #ffff00;
+    -webkit-animation: ripples1_anim 5s linear  0.4s infinite;
+    animation: ripples1_anim 5s linear  0.4s infinite;
+    border-radius: 50%;
+    opacity: 0;
+    z-index: 80;
+  }
+  .ripples1 div::after { /*内側の円*/
+    position: absolute;
+    content: '';
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: dotted 10px #ff7f00;
+    -webkit-animation: ripples1_anim 5s linear  0.8s infinite;
+    animation: ripples1_anim 5s linear  0.8s infinite;
+    border-radius: 50%; 
+    opacity: 0;
+    z-index: 80;
+  }
+  @keyframes ripples1_anim {
+    0% {
+      opacity: 1;
+    }
+    50% {   
+      transform: translate(-350px,-350px);  /*--中央の位置--*/
+      width: 700px;    /*--最大の円の大きさ--*/
+      height: 700px; 
+      opacity: 0;
+    }
+  }
+/* #endregion */
+.container2 { /*--花火2 ラベンダー1--*/
+  height: 400px;
+  width: 400px;
+  top: 30%;
+  right: 15%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; 
+  z-index: 80;
+  position: absolute;
+}
+/* #region container2 */
+.ripples2 div {  /*外側の円*/
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;  
+  height: 0;
+  border: dotted 10px #ff00ff;
+  -webkit-animation: ripples2_anim 8s linear 1.0s infinite;
+  animation: ripples2_anim 8s linear 1.0s infinite;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 80;
+}
+.ripples2 div::before {   /*真ん中*/
+  position: absolute;
+  content: '';
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: dotted 10px #adff2f;
+  -webkit-animation: ripples2_anim 8s linear  1.4s infinite;
+  animation: ripples2_anim 8s linear  1.4s infinite;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 80;
+}
+.ripples2 div::after {  /*内側の円*/
+  position: absolute;
+  content: '';
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: dotted 10px #00ffff;
+  -webkit-animation: ripples2_anim 8s linear  1.8s infinite;
+  animation: ripples2_anim 8s linear  1.8s infinite;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 80;
+}
+@keyframes ripples2_anim {
+  0% {
+    opacity: 1;
+  }
+  30% {   
+    transform: translate(-175px,-175px); 
+    width: 350px;  
+    height: 350px; 
+    opacity: 0;
+  }
+}
+/* #endregion container2 */
+.container5 {   /*--花火3  赤2--*/
+  height: 400px;
+  width: 400px;
+  top: 60%;
+  left: 13%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  z-index: 80;
+  position: absolute;
+}
+/* #region container5 */
+.ripples5 div {  /*外側の円*/
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;  
+  height: 0;
+  border: dotted 10px #ff0000;
+  -webkit-animation: ripples5_anim 8s 0.2s linear  infinite;
+  animation: ripples5_anim 8s 0.2s linear  infinite;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 80;
+}
+.ripples5 div::before {   /*真ん中*/
+  position: absolute;
+  content: '';
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: dotted 10px #ffff00;
+  -webkit-animation: ripples5_anim 8s linear  0.8s infinite;
+  animation: ripples5_anim 8s linear  0.6s infinite;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 80;
+}
+.ripples5 div::after { /*内側の円*/
+  position: absolute;
+  content: '';
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: dotted 10px #ff7f00;
+  -webkit-animation: ripples5_anim 8s linear  1.6s infinite;
+  animation: ripples5_anim 8s linear  1.2s infinite;
+  border-radius: 50%; 
+  opacity: 0;
+  z-index: 80;
+}
+@keyframes ripples5_anim {
+  0% {
+    opacity: 1;
+  }
+  50% {   
+    transform: translate(-200px,-200px); 
+    width: 400px;  
+    height: 400px; 
+    opacity: 0;
+  }
+}
+/* #endregion container5*/
+/* #endregion 花火アニーメーション*/
+/* #endregion tour */
+/*=====コンテスト================================*/
+/* #region contest */
+/* #region */
+#contest {
+  margin-top: 170px;
+  height: 90%;
+  position: relative;
+}
+.contest-outer {
+  width: 100%;  /*==レスポンシブにはvwではない==*/
+  margin: 0 auto;
+}
+.contest-inner {     /*===1段目===*/ 
+  width: 100%;    /*==レスポンシブにはvwではない==*/
+  font-size: 1.4rem;
+  line-height: 60px;
+  letter-spacing: 2px;
+  position: relative;
+}
+.contest-text {
+  font-family: "kokumincho", "Yu Mincho", serif;
+  writing-mode: vertical-rl;
+  position: absolute;
+  top: 0;
+  right: 22%;  /*==レスポンシブにはright==*/
+  z-index: 90;
+}
+.contest-text .section-title {
+  font-size: 3.5rem;
+  transform: translateY(-10px);
+  padding-left: 40px;
+}
+.contest-text p:nth-child(2) {
+  padding-left: 20px;
+}
+/* #endregion */
+/*----1.2段目　画像----*/
+/* #region */
+.contest-image {      
+  padding-top: 150px;  /*ここにwidthを入れない*/
+}
+.contest-image-sp {
+  display: none;
+}
+.contest-image .img1 {
+  position: relative;
+  width: 55%;
+  margin: 0 auto;
+}
+.contest-image .img1 img {
+  z-index: 70;
+}
+.contest-image .img2-sp,
+.contest-image .img4-sp {
+  display: none;
+}
+/* #endregion */
+/*-------3段目　応募概要--------*/
+/* #region */
+.contest-summary {
+  height: 500px;
+  font-size: 1.2rem;
+  writing-mode: vertical-rl;
+  padding: 40px 40px 25px 40px;
+  margin: 40px auto 0 auto;
+  background-color: #2a2a2a;
+  line-height: 50px;
+}
+.contest-summary span {
+  font-family: "kokumincho", "Yu Mincho", serif;
+  font-size: 2rem;
+}
+.contest-summary p:nth-child(2) {
+  padding-right: 20px;
+}
+.contest-summary a:hover {
+  opacity: 0.7;
+}
+/* #endregion */
+/* #region 花火*/
+#contest .container3 {     /*=====花火3 ピンク１=====*/
+  height: 600px;
+  width: 600px; 
+  top: -3%;
+  right: 15%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; 
+  z-index: 80;
+  position: absolute;
+}
+/* #region container3 */
+.ripples3 div {  /*内側の円*/
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;  
+  height: 0;
+  border: dotted 10px #ff007f;
+  -webkit-animation: ripples3_anim 6s linear 0.2s infinite; 
+  animation: ripples3_anim 6s linear 0.2s infinite;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 80
+}
+.ripples3 div::before {   /*外側の円*/
+  position: absolute;
+  content: '';
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: dotted 10px #007fff;
+  -webkit-animation: ripples3_anim 6s linear  0.5s infinite;
+  animation: ripples3_anim 6s linear  0.5s infinite;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 80
+}
+.ripples3 div::after {  /*真ん中*/
+  position: absolute;
+  content: '';
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: dotted 10px #00ffff;
+  -webkit-animation: ripples3_anim 6s linear  0.8s infinite ;
+  animation: ripples3_anim 6s linear  0.8s infinite;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 80
+}
+@keyframes ripples3_anim {
+  0% {
+    opacity: 1;
+  }
+  30% {   
+    transform: translate(-350px,-350px); 
+    width: 700px;  
+    height: 700px; 
+    opacity: 0;
+  }
+}
+/* #endregion container3 */
+/* #endregion 花火 */
+/* #endregion contest */
+/*=====観光スポット========================*/
+/* #region 観光 */
+/* #region */
+#sightseeing {
+  width: 90%;
+  height: 110vh;  /*--outerと一緒に調整--*/
+  position: relative;
+  padding-top: 170px;
+  z-index: 50;
+}
+.outer {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  height: 65%;  /*--sightseeingと一緒に調整--*/
+  width: 90%;
+  margin: 0 auto;
+}
+.inner-text {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.inner-text .section-title {
+  font-size: 2.5rem;
+  padding-left: 30px;
+  height: 70%;
+}
+.outer p, .outer .association a {
+  display: block;
+  writing-mode: vertical-rl;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+.inner-text .text {
+  height: 100%;  /*--この高さで下の余白決まる--*/
+  white-space: nowrap;
+}
+.content-text-sp2 {
+  display: none;
+}
+.outer .inner {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  opacity: 0;
+  animation: mainFadeIn 2s forwards 1.8s;
+  -webkit-animation: mainFadeIn 2s forwards 1.8s;
+}
+/* #endregion */
+/*-----PC メインスライダー-----*/
+/* #region  maindlider */ 
+.main-slider {    
+  position: relative;
+  width: 74vw;   /*sumbnail-sliderと合わせて100*/
+  margin: 0 auto;
+}
+.slide {
+  width: 100%;
+  position: absolute;  /*テキストの位置のため*/
+  top: 0;
+  right: 0;
+}
+.slide figure img {
+  position: relative;
+  width: 100%;
+  object-fit: cover;  /*画像の中心を基点にしてアスペクト比を保持したまま表示エリアを常に覆う状態で表示*/
+  -o-object-fit: cover;
+  padding-right: 20px;
+}
+.slide:target {   /*-----クリックしてスライドが出てくる時間-----*/
+  z-index: 90;
+  animation: show 1.2s;
+  -webkit-animation: show 1.2s;
+}
+.slide:first-of-type {
+  z-index: 90;
+}
+.slide:first-of-type .content-text {
+  transform: translateX(-50px);
+  opacity: 0;
+}
+.slide:target .content-text {    
+  animation: showMeta 1.2s ease 0.9s forwards;
+  -webkit-animation: showMeta 1.2s ease 0.9s forwards;
+}
+.slide:not(:target) :not(:first-of-type) {
+  animation: hide 1.2s ease;
+  -webkit-animation: hide 1.2s ease;
+}
+.slide:not(:target) :not(:first-of-type) .content-text {
+  animation: hideMeta 1s ease forwards;
+  -webkit-animation: hideMeta 1s ease forwards;
+}
+.slide:first-of-type {
+  z-index: 70;
+}
+.slide:first-of-type .content-text {
+  transform: translateX(0);
+  opacity: 1;
+}
+.slide .content-text {   /*---左にテキスト位置---*/
+  writing-mode: vertical-rl;
+  background-color: rgba(51, 51, 51,0.6);;
+  line-height: 35px;
+  letter-spacing: 2px;
+  position: absolute;
+  top: 8%;
+  left: 5%;
+  color: #fff;
+  opacity: 0;
+  box-sizing: content-box;
+}
+.slide .content-text .title {
+  font-size: 1.4rem;
+  padding: 15px 15px 15px 10px;
+}
+.slide .content-text .desc {
+  padding: 15px 0 15px 15px;
+}
+/* #endregion mainslider  */
+/*-----PC サムネイルスライダー-----*/
+/* #region thumbnail-slider */
+.thumbnail-slider {
+  position:relative;
+  width: 21vw;   /*--main-sliderと合わせて100--*/
+  height: 38.8vw;   /*--ここで調整--*/
+  line-height: 0;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.thumbnail-slider2 {
+  display: none;
+}
+.thumbnail-slider::-webkit-scrollbar {
+  width: 5px;
+}
+.thumbnail-slider::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.28);
+}
+.thumbnail-slider::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.44);
+}
+.subslide {   
+  position: relative;
+  height: 15%;   /*--ここで調整VWではない--*/
+  overflow: hidden;
+}
+.subslide:hover figure img {
+  transform: scale(1.1);
+}
+.subslide figure img {
+  transition: transform 0.5s;
+}
+/* #endregion */
+/* #region keyframes */
+@-webkit-keyframes mainFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes mainFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes show {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes show {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes hide {
+  0% {
+    z-index: 2;
+  }
+  100% {
+    z-index: 2;
+  }
+}
+@keyframes hide {
+  0% {
+    z-index: 2;
+  }
+  100% {
+    z-index: 2;
+  }
+}
+@-webkit-keyframes showMeta {
+  0% {
+    transform: translateX(-50px);
+    filter: blur(5px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes showMeta {
+  0% {
+    transform: translateX(-50px);
+    filter: blur(5px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes hideMeta {
+  0% {
+    transform: translateX(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50px);
+    filter: blur(5px);
+    opacity: 0;
+  }
+}
+@keyframes hideMeta {
+  0% {
+    transform: translateX(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50px);
+    filter: blur(5px);
+    opacity: 0;
+  }
+}
+/* #endregion */
+/*---------PC 観光案内HP--------*/
+/* #region */
+.association {      
+  margin: 50px auto 0 auto;
+  width: 100%;
+  padding-bottom: 170px;
+  display: flex;
+  justify-content: center;
+}
+.association a {    
+  writing-mode: vertical-rl;
+  font-size: 1.2rem;
+  text-decoration: underline;
+  white-space: nowrap;
+  margin: 0 30px;
+}
+.association a:hover {
+  opacity: 0.5;
+}
+.association img {
+  display: block;
+  box-sizing: content-box;
+  width: 250px;
+  height: 141px;
+  padding-right: 15px;
+}
+/* #endregion */
+/* #region  花火アニメーション*/
+#sightseeing .container4 {   /*--花火4 オレンジ--*/ 
+  position: relative; 
+  height: 600px;
+  width: 600px;
+  margin: 0;
+  top: -40%;
+  right: 15%;
+  overflow: hidden;
+  z-index: 70;
+  position: absolute;
+}
+/* #region container4 */
+.ripples4 div {  /*外側の円*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;  
+  height: 0;
+  border: dotted 10px #ff4f00;
+  -webkit-animation: ripples4_anim 7s linear  infinite;
+  animation: ripples4_anim 7s linear 1.2s infinite;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 70;
+}
+.ripples4 div::before {   /*真ん中*/
+  position: absolute;
+  content: '';
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: dotted 10px #ffff00;
+  -webkit-animation: ripples4_anim 7s linear  0.5s infinite;
+  animation: ripples4_anim 7s linear  1.6s infinite;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 70;
+}
+.ripples4 div::after { /*内側の円*/
+  position: absolute;
+  content: '';
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: dotted 10px #00ffff;
+  -webkit-animation: ripples4_anim 7s linear  0.8s infinite;
+  animation: ripples4_anim 7s linear  2.0s infinite;
+  border-radius: 50%; 
+  opacity: 0;
+  z-index: 70;
+}
+@keyframes ripples4_anim {
+  0% {
+    opacity: 1;
+  }
+  50% {   
+    transform: translate(-250px,-250px); 
+    width: 500px;  
+    height: 500px; 
+    opacity: 0;
+  }
+}
+/* #endregion container4 */
+.container6 {      /*--花火6 ラベンダー2--*/
+  position: relative;
+  height: 400px;
+  width: 400px;
+  top: -50%;
+  left: 15%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; 
+  z-index: 80;
+  position: absolute;
+}
+/* #region container6 */
+.ripples6 div {  /*外側の円*/
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;  
+  height: 0;
+  border: dotted 10px #ff00ff;
+  -webkit-animation: ripples6_anim 8s linear 1.0s infinite;
+  animation: ripples6_anim 8s linear 1.0s infinite;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 80;
+}
+.ripples6 div::before {   /*真ん中*/
+  position: absolute;
+  content: '';
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: dotted 10px #adff2f;
+  -webkit-animation: ripples6_anim 8s linear  1.4s infinite;
+  animation: ripples6_anim 8s linear  1.4s infinite;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 80;
+}
+.ripples6 div::after {  /*内側の円*/
+  position: absolute;
+  content: '';
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: dotted 10px #00ffff;
+  -webkit-animation: ripples6_anim 8s linear  1.8s infinite;
+  animation: ripples6_anim 8s linear  1.8s infinite;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 80;
+}
+@keyframes ripples6_anim {
+  0% {
+    opacity: 1;
+  }
+  30% {   
+    transform: translate(-200px,-200px); 
+    width: 400px;  
+    height: 400px; 
+    opacity: 0;
+  }
+}
+/* #endregion container6 */
+/* #endregion 花火アニメーション*/
+/* #endregion 観光 */
+/*======感染予防対策===========================*/
+/* #region control */
+#control {
+  margin-top: 40px;
+  padding: 0 0 170px 0;
+  position: relative;
+}
+.control-outer-pc {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+.control-outer-pc .section-title p {
+  font-size: 2.5rem;
+  padding-left: 15px
+}
+.control-outer-pc .section-title p:nth-child(2) {
+  padding-left: 50px;
+}
+.control-outer-pc p {
+  display: block;
+  writing-mode: vertical-rl;
+  font-size: 1.2rem;
+}
+.control-outer-pc p:nth-child(2) {
+  line-height: 42px;  
+}
+.control-outer-pc p:nth-child(3) {
+  padding: 0 30px;
+}
+.control-outer-pc img {
+  display: block;
+  width: 35%;
+}
+.control-outer-pc p:nth-child(5),
+.control-outer-pc p:nth-child(6) {
+  line-height: 42px;
+  padding-right: 30px;
+}
+.control-outer {
+  display: none;
+}
+/* #endregion */
+/* #region 花火アニメーション*/
+#control .container7 {    /* 花火7 ピンク2--*/
+  height: 400px;
+  width: 400px;
+  top: 60%;
+  right: 15%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; 
+  z-index: 40;
+  position: absolute;
+}
+/* #region container7 */
+.ripples7 div {  /*内側の円*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;  
+  height: 0;
+  border: dotted 10px #ff007f;
+  -webkit-animation: ripples7_anim 6s linear 0.2s infinite; 
+  animation: ripples7_anim 6s linear 0.2s infinite;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 40
+}
+.ripples7 div::before {   /*外側の円*/
+  position: absolute;
+  content: '';
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: dotted 10px #007fff;
+  -webkit-animation: ripples7_anim 6s linear  0.5s infinite;
+  animation: ripples7_anim 6s linear  0.5s infinite;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 40
+}
+.ripples7 div::after {  /*真ん中*/
+  position: absolute;
+  content: '';
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: dotted 10px #00ffff;
+  -webkit-animation: ripples7_anim 6s linear  0.8s infinite ;
+  animation: ripples7_anim 6s linear  0.8s infinite;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 40
+}
+@keyframes ripples7_anim {
+  0% {
+    opacity: 1;
+  }
+  30% {   
+    transform: translate(-225px,-225px); 
+    width: 450px;  
+    height: 450px; 
+    opacity: 0;
+  }
+}
+/* #endregion container7 */
+/* #endregion 花火アニメーション*/
+/*======アクセス===========================*/
+/* #region access */
+#access {
+  background-repeat: initial;
+  background: url(img/access-3.jpg) no-repeat center center/cover;
+  width: 100%;
+}
+#access .inner {
+  background-color: rgba(51, 51, 51,0.8);
+  padding-top: 170px;
+  width: 100%;
+}
+#access .access-text {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+}
+.access-text-sp {
+  display: none;
+}
+.cruise {
+  writing-mode: vertical-rl;
+}
+#access .section-title {
+  font-size: 3.5rem;
+  transform: translateY(-11px);
+  padding-left: 20px;
+}
+.cruise span,
+.ferry span {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0 20px 0 10px;
+  }
+.ferry span {
+  margin-right: 3.5rem;
+}
+.cruise .train, 
+.cruise .car {
+  font-size: 1.2rem;
+  line-height: 50px;
+  letter-spacing: 2px;
+  background-color: rgba(17, 17, 17, 0.6);
+  padding: 20px 10px 20px 20px;
+  height: 28rem;
+}
+.cruise .car {
+  margin-left: 20px;
+}
+.cruise .train p:nth-child(1),
+.cruise .car p:nth-child(1) {
+  border-left: 1px solid;
+  content: "";
+  flex-grow: 1;
+  padding-left: 10px;
+  margin-left: 20px;
+}
+#access .cruise .car p:nth-child(2), 
+#access .cruise .car p:nth-child(3) {
+  line-height: 35px;
+}
+.cruise .car p:nth-child(2) {
+  padding: 0 10px 0 20px;
+}
+.cruise .car p:nth-child(3) {
+  padding: 0 10px 0 20px;
+}
+.ferry {
+  writing-mode: vertical-rl;
+  position: relative;
+}
+.ferry .daifuku, 
+.ferry .kanafuro {
+  font-size: 1.2rem;
+  line-height: 50px;
+  letter-spacing: 2px;
+  background-color: rgba(17, 17, 17, 0.6);
+  padding: 20px 20px 20px 10px;
+  margin: 0 0 0 10px;
+  width: 18rem
+}
+.ferry .daifuku p:first-child, 
+.ferry .kanafuro p:first-child {
+  display: inline-block;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  content: "";
+  flex-grow: 1;
+  padding: 10px 0;
+  margin-left: 15px;
+}
+.ferry .daifuku p:nth-child(2), 
+.ferry .kanafuro p:nth-child(2) {
+  padding: 0 20x 0 20px;
+}
+.ferry a {
+  font-size: 1rem;
+  text-decoration: underline;
+  margin: 160px 20px 0 0;
+}
+.ferry .daifuku a {
+  margin-top: 210px;
+}
+.ferry a:hover {
+  opacity: 0.6;
+}
+#access .ferry p:last-child {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  line-height: 30px;
+}
+#access iframe {
+  width: 100%;
+  margin: 60px 0 170px 0;
+  padding: 0 7%;
+}
+/* #endregion access */
+/*======フッター・お問い合わせ=============*/
+/* #region footer */
+/* #region ---1段目--- */
+#footer {
+  background-color: #222;
+  background: url(img/footer-1.jpg) no-repeat center center/cover;
+  width: 100vw;
+  padding: 0 7%;
+  position: relative;
+}
+#footer::after {
+  content:'';
+  background-color: rgba(17, 17, 17,0.6);
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+#footer .footer-inner {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+.footer-inquiry, .footer-text {
+  writing-mode: vertical-rl;
+  font-size: 1.2rem;
+  line-height: 50px;
+  padding-top: 170px;
+  position: relative;
+  z-index: 1;
+}
+#footer .footer-title {
+  font-family: "kokumincho", "Yu Mincho", serif;
+  padding: 0 20px 0 30px;
+  font-size: 2.3rem;
+}
+.footer-inquiry p {
+  letter-spacing: 2px;
+}
+.footer-inquiry .form {
+  border: solid 1px #fff;
+  background-color: rgba(255, 255, 255, 0.4);
+  display: inline-block;
+  text-align: center;
+  letter-spacing: 2px;
+  padding: 12px 3px;
+  margin: 150px 20px 0 20px;
+}
+.footer-inquiry .form a {
+  display: block;
+}
+#footer .form a:hover {
+  opacity: 0.6;
+}
+.footer-inquiry .logo {
+  display: flex;
+  justify-content: flex-end;
+  margin: 80px 20px 20px 20px;
+}
+.footer-inquiry .logo li {
+  margin-bottom: 35px;
+}
+.footer-inquiry .logo li a:hover {
+  opacity: 0.6;
+}
+/* #endregion ---1段目--- */
+/* #region ---2段目--- */
+.footer-text {
+  margin-right: 50px;
+}
+.footer-text dl {
+  display: flex;
+  letter-spacing: 2px;
+}
+/* #endregion  ---2段目--- */
+/* #region コピーライト */
+#footer .copylight p {
+  font-size: 0.625rem;
+  padding: 110px 0 60px 0;
+  display: block;
+  text-align: center;
+   position: relative;
+  z-index: 1;
+}
+/* #endregion コピーライト */
+/* #endregion footer */
+.wrap {
+  overflow: hidden;
+}
