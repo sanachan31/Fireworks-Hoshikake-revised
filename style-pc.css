@@ -357,7 +357,8 @@ nav, ul, li {
     flex-direction: row-reverse;
   }
   .tour-reserve-pc .price p:nth-child(1) {
-    font-size: 1.5rem;
+    font-family: "kokumincho", "Yu Mincho", serif;
+    font-size: 1.4rem;
   }
   .tour-reserve-pc .price p:nth-child(2) {
     line-height: 40px;
